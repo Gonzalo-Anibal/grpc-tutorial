@@ -1,0 +1,18 @@
+syntax = "proto3";
+package user;
+
+option go_package="GolandProjects/grpc-tutorial/user/proto";
+
+message UserRequest {
+  string name = 1;
+  int32 age = 2;
+}
+
+message UserResponse {
+  string name = 1;
+  int32 age = 2;
+}
+
+service UserService {
+  rpc User (UserRequest) returns (UserResponse);
+}
